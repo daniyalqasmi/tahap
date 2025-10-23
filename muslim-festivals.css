@@ -157,7 +157,7 @@ body {
 }
 
 .read-more:hover {
-  background: linear-gradient(to right, #ff3c00, #ff7b00);
+  background: #ff3c00
 }
 a{
   text-decoration: none;

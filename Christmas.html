@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Festival Page</title>
+    <link rel="stylesheet" href="christmas.css">
+    <style>
+        :root {
+            --primary-color: #C0392B; 
+            --light-accent: #27AE60;  
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="logo">
+      <span>Festivals.com</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+    <div class="hero-banner">
+        </div>
+
+    <main class="page-content" id="pdf-content">
+        <div class="content-left">
+            <div class="festival-header">
+                <a href="christian-festivals.html" class="back-link">Back</a>
+                <h1>Christmas</h1>
+                <p class="date-range">December 25</p>
+            </div>
+
+            <section class="info-card about">
+                <h2>About Christmas</h2>
+                <p>Christmas is an annual festival commemorating the  birth of Jesus Christ , observed primarily on December 25th. It is a central feast day in the Christian liturgical year, followed by a season of celebration. It is a time marked by joy, goodwill, and reflection on the Christian message of hope.</p>
+            </section>
+
+            <section class="info-card historical">
+                <h2>Origins and Worldwide Observance</h2>
+                <p>While the exact date of Christ's birth is unknown, December 25th was established in the early church. The holiday is celebrated worldwide, particularly across North America, Europe, Latin America, and Oceania. Traditions often blend religious rites with cultural practices inherited from pre-Christian winter festivals.</p>
+            </section>
+
+            <section class="info-card cultural">
+                <h2>Traditions and Symbols</h2>
+                <p>Key traditions include attending Midnight Mass or special church services, singing Christmas carols, preparing large feasts, and exchanging gifts. Popular symbols are the decorated Christmas tree, Santa Claus (Saint Nicholas), the nativity scene, and lighted candles representing the star of Bethlehem.</p>
+            </section>
+
+            <section class="gallery">
+                <div class="gallery-heading">
+                    <span class="icon">🖼️</span>
+                    <h2>Gallery</h2>
+                </div>
+                <div class="gallery-images">
+                    <div class="image-placeholder image-1"></div>
+                    <div class="image-placeholder image-2"></div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="content-right">
+            <div class="quick-info">
+                <h3>Quick Info</h3>
+                <div class="info-item">
+                    <p class="label">Holiday Name</p>
+                    <p class="value">Christmas</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Celebration Date</p>
+                    <p class="value">December 25</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Category</p>
+                    <p class="value">Christian Holiday</p>
+                </div>
+                
+                <a href="#" class="btn btn-red" onclick="generatePDF(event)">⬇️ Download Description</a>
+                
+                <a href="gallery.html" class="btn btn-white" >View Full Gallery</a>
+            </div>
+        </aside>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF(event) {
+            event.preventDefault(); 
+            const element = document.querySelector('.content-left');
+            const options = {
+                margin: 15,
+                filename: 'Christmas_Description.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
+</body>
+</html>

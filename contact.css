@@ -1,0 +1,154 @@
+/* 🌍 General */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+h2, h3 {
+  margin: 0;
+}
+
+/* 🌐 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ff512f;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+  color: #ff512f;
+}
+
+/* 🧡 Contact Header */
+.contact-header {
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: #fff;
+  text-align: left;
+  padding: 60px 80px;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contact-header p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* 📬 Contact Container */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 60px 80px;
+}
+
+.contact-left, .contact-right {
+  background-color: #fff;
+}
+
+.contact-left {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-left form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+button {
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* 🧾 Right Side Cards */
+.about-card, .info-card, .faq-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
+
+.about-card h3, .info-card h3, .faq-card h3 {
+  color: #ff512f;
+  margin-bottom: 10px;
+}
+
+.about-card p, .info-card p, .faq-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ⚙️ Footer */
+footer {
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .contact-header {
+    padding: 40px 20px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,281 @@
+:root {
+    --primary-text: #333;
+    --secondary-text: #666;
+    --light-bg: #f5f5f5;
+    --white-bg: #ffffff;
+    --primary-color: #C0392B;
+    --light-accent: #27AE60;
+    --red-btn: var(--primary-color);
+    --font-family: 'Arial', sans-serif;
+    --padding-base: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px var(--padding-base);
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    color: var(--white-bg);
+}
+
+.hero-banner {
+    height: 350px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+        url('/images/easter.jpeg') center/cover;
+    background-blend-mode: multiply;
+}
+
+.page-content {
+    display: flex;
+    max-width: 1200px;
+    margin: -100px auto 40px;
+    padding: 0 var(--padding-base);
+    position: relative;
+    z-index: 5;
+}
+
+.content-left {
+    flex: 3;
+    padding-right: 30px;
+}
+
+.content-right {
+    flex: 1;
+    min-width: 280px;
+}
+
+.festival-header {
+    color: var(--white-bg);
+    margin-bottom: var(--padding-base);
+}
+
+.back-link {
+    color: var(--white-bg);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.festival-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.date-range {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.info-card,
+.gallery {
+    background-color: var(--white-bg);
+    padding: var(--padding-base);
+    border-radius: 8px;
+    margin-bottom: var(--padding-base);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h2 {
+    color: var(--primary-text);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.gallery-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.gallery-heading h2 {
+    font-size: 1em;
+    margin-left: 8px;
+}
+
+.gallery-images {
+    display: flex;
+    gap: 15px;
+}
+
+.image-placeholder {
+    height: 120px;
+    flex: 1;
+    background-color: var(--light-accent);
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-placeholder {
+    background-color: var(--light-accent);
+}
+
+.image-1 {
+    background-image: url('/images/easter1.jpeg');
+}
+
+.image-2 {
+    background-image: url('/images/easter2.jpg');
+}
+
+.btn-white:hover {
+    background-color: #fff8e1;
+}
+
+.btn-red:hover {
+    filter: brightness(90%);
+    background-color: #FFC400;
+}
+
+.quick-info {
+    background-color: var(--white-bg);
+    padding: var(--padding-base);
+    border-radius: 8px;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.quick-info h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item .label {
+    font-size: 0.8em;
+    color: var(--secondary-text);
+}
+
+.info-item .value {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--primary-text);
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: var(--red-btn);
+    color: var(--white-bg);
+    border: 1px solid var(--red-btn);
+}
+
+.btn-red:hover {
+    filter: brightness(85%);
+}
+
+.btn-white {
+    background-color: var(--white-bg);
+    color: var(--red-btn);
+    border: 1px solid var(--red-btn);
+}
+
+.btn-white:hover {
+    background-color: #fcebeb;
+}
+
+@media (max-width: 900px) {
+    .page-content {
+        flex-direction: column;
+        margin-top: -50px;
+    }
+
+    .content-left {
+        padding-right: 0;
+    }
+
+    .content-right {
+        order: -1;
+        margin-bottom: var(--padding-base);
+    }
+
+    .quick-info {
+        position: static;
+    }
+
+    .gallery-images {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-placeholder {
+        height: 180px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 35px;
+}
+
+.logo span {
+    color: #ff6a00;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ff6a00;
+}

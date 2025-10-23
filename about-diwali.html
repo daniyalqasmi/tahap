@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Festival Page</title>
+    <link rel="stylesheet" href="about-diwali.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span>Festivals.com</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-banner">
+    </div>
+
+    <main class="page-content" id="pdf-content">
+        <div class="content-left">
+            <div class="festival-header">
+                <a href="hindu-festivals.html" class="back-link">Back</a>
+                <h1>Diwali</h1>
+                <p class="date-range">October-November (varies)</p>
+            </div>
+
+            <section class="info-card about">
+                <h2>About Diwali</h2>
+                <p>Diwali, also known as Deepavali, is one of the most significant festivals in Hinduism. It symbolizes
+                    the spiritual victory of light over darkness, good over evil, and knowledge over ignorance. The
+                    festival lasts for five days, with the main celebration occurring on the third day.</p>
+            </section>
+
+            <section class="info-card historical">
+                <h2>Historical Background</h2>
+                <p>The origins of Diwali are rooted in ancient Indian history and mythology. According to Hindu
+                    tradition, Diwali marks the return of Lord Rama to his kingdom Ayodhya after defeating the demon
+                    king Ravana. The people of Ayodhya lit oil lamps to welcome him back, starting the tradition of
+                    lighting diyas during Diwali.</p>
+            </section>
+
+            <section class="info-card cultural">
+                <h2>Cultural Significance</h2>
+                <p>Diwali holds immense cultural importance across India and other countries. It brings families
+                    together, promotes the exchange of gifts and sweets, and encourages charitable giving. The festival
+                    also marks the beginning of the financial year for many businesses.</p>
+            </section>
+
+            <section class="gallery">
+                <div class="gallery-heading">
+                    <span class="icon">🖼️</span>
+                    <h2>Gallery</h2>
+                </div>
+                <div class="gallery-images">
+                    <div class="image-placeholder image-1"></div>
+                    <div class="image-placeholder image-2"></div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="content-right">
+            <div class="quick-info">
+                <h3>Quick Info</h3>
+                <div class="info-item">
+                    <p class="label">Festival Name</p>
+                    <p class="value">Diwali</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Celebration Date</p>
+                    <p class="value">October-November (varies)</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Category</p>
+                    <p class="value">Hindu Festival</p>
+                </div>
+
+                <a href="#" class="btn btn-red" onclick="generatePDF(event)">⬇️ Download Description</a>
+
+                <a href="gallery.html" class="btn btn-white">View Full Gallery</a>
+            </div>
+        </aside>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF(event) {
+            event.preventDefault();
+            const element = document.querySelector('.content-left');
+            const options = {
+                margin: 15,
+                filename: 'Diwali_Description.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
+</body>
+
+</html>

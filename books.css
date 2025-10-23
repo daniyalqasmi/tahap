@@ -1,0 +1,166 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #fff;
+  border-bottom: 2px solid #f2f2f2;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ff6600;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ff6600;
+}
+
+/* ===== HERO SECTION ===== */
+.books-hero {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.books-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.books-hero p {
+  font-size: 1.1rem;
+}
+
+/* ===== BOOKS GRID ===== */
+.books-section {
+  padding: 4rem 2rem;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.book-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.book-info {
+  padding: 1.2rem;
+}
+
+.book-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #111;
+}
+
+.book-info .author {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+.book-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  color: #555;
+}
+
+.price-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.price-rating .rating {
+  color: #f5b301;
+  font-size: 1rem;
+}
+
+.price-rating .price {
+  font-weight: 600;
+  color: #333;
+}
+
+.buy-btn {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buy-btn:hover {
+  background: #e95c00;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
+}

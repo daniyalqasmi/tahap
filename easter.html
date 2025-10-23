@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Festival Page</title>
+    <link rel="stylesheet" href="easter.css">
+    </head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span>Festivals.com</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero-banner">
+    </div>
+
+    <main class="page-content" id="pdf-content">
+        <div class="content-left">
+            <div class="festival-header">
+                <a href="christian-festivals.html" class="back-link">Back</a>
+                <h1>Easter</h1>
+                <p class="date-range">March–April (varies each year)</p>
+            </div>
+
+            <section class="info-card about">
+                <h2>About Easter</h2>
+                <p>Easter is the most important and oldest festival of the Christian Church. It commemorates the
+                    resurrection of Jesus Christ from the dead, three days after his crucifixion. It marks the
+                    culmination of the Passion of Christ, followed by a season of celebration and joy.</p>
+            </section>
+
+            <section class="info-card historical">
+                <h2>Date and Liturgical Significance</h2>
+                <p>Easter is a movable feast, falling on the first Sunday after the full moon following the vernal
+                    equinox. It represents the foundation of Christian faith: the triumph over sin and death, and the
+                    promise of new life. It follows the solemn period of Lent.</p>
+            </section>
+
+            <section class="info-card cultural">
+                <h2>Traditions and Symbols</h2>
+                <p>Key traditions include special church services, large family meals, and the exchange of gifts.
+                    Popular symbols are the cross (representing sacrifice), Easter eggs (symbolizing new
+                    life/resurrection), the Easter lily, and the Easter bunny, which reflects spring
+                    celebrations.</p>
+            </section>
+
+            <section class="gallery">
+                <div class="gallery-heading">
+                    <span class="icon">🖼️</span>
+                    <h2>Gallery</h2>
+                </div>
+                <div class="gallery-images">
+                    <div class="image-placeholder image-1"></div>
+                    <div class="image-placeholder image-2"></div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="content-right">
+            <div class="quick-info">
+                <h3>Quick Info</h3>
+                <div class="info-item">
+                    <p class="label">Holiday Name</p>
+                    <p class="value">Easter</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Celebration Date</p>
+                    <p class="value">March–April</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Category</p>
+                    <p class="value">Christian Holiday</p>
+                </div>
+
+                <a href="#" class="btn btn-red" onclick="generatePDF(event)">⬇️ Download Description</a>
+
+                <a href="/gallery.html" class="btn btn-white" >View Full Gallery</a>
+            </div>
+        </aside>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF(event) {
+          
+            event.preventDefault();
+
+            const element = document.querySelector('.content-left');
+
+            const options = {
+                margin: 15,
+                filename: 'Easter_Description.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
+</body>
+
+</html>

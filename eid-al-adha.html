@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid al-Adha Festival Page</title>
+    <link rel="stylesheet" href="eid-al-adha.css"> 
+</head>
+<body>
+
+   <nav class="navbar">
+        <div class="logo">
+            <span>Festivals.com</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hero-banner">
+        </div>
+
+    <main class="page-content" id="pdf-content">
+        <div class="content-left">
+            <div class="festival-header">
+                <a href="muslim-festivals.html" class="back-link">Back</a>
+                <h1>Eid al-Adha</h1>
+                <p class="date-range">Dhul Hijjah 10th (Islamic calendar)</p>
+            </div>
+
+            <section class="info-card about">
+                <h2>About Eid al-Adha</h2>
+                <p>Eid al-Adha, the  "Festival of the Sacrifice,"  is the second major Muslim holiday. It is celebrated annually on the 10th day of Dhul Hijjah, the last month of the Islamic lunar calendar, and coincides with the conclusion of the  Hajj pilgrimage  to Mecca.</p>
+            </section>
+
+            <section class="info-card historical">
+                <h2>Significance and History</h2>
+                <p>The festival commemorates  Prophet Ibrahim’s (Abraham's) profound devotion and obedience  when he was willing to sacrifice his son, Ismail, as commanded by Allah. This act is the basis for the sacrifice ritual, symbolizing complete submission to God's will.</p>
+            </section>
+
+            <section class="info-card cultural">
+                <h2>Traditions and Practices</h2>
+                <p>The central tradition is the  Qurbani (animal sacrifice) . The meat is strictly divided into three parts: one for the family, one for friends/relatives, and one for the poor. Other traditions include Eid prayers, giving charity, and major family gatherings where food is shared.</p>
+            </section>
+
+            <section class="gallery">
+                <div class="gallery-heading">
+                    <span class="icon">🖼️</span>
+                    <h2>Gallery</h2>
+                </div>
+                <div class="gallery-images">
+                    <div class="image-placeholder image-1"></div>
+                    <div class="image-placeholder image-2"></div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="content-right">
+            <div class="quick-info">
+                <h3>Quick Info</h3>
+                <div class="info-item">
+                    <p class="label">Festival Name</p>
+                    <p class="value">Eid al-Adha</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Celebration Date</p>
+                    <p class="value">During Hajj</p>
+                </div>
+                <div class="info-item">
+                    <p class="label">Category</p>
+                    <p class="value">Muslim Festival</p>
+                </div>
+                
+                <a href="#" class="btn btn-red" onclick="generatePDF(event)">⬇️ Download Description</a>
+                
+                <a href="gallery.html" class="btn btn-white" >View Full Gallery</a>
+            </div>
+        </aside>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF(event) {
+            event.preventDefault(); 
+            const element = document.querySelector('.content-left');
+            const options = {
+                margin: 15,
+                filename: 'Eid_al-Adha_Description.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: false },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
+</body>
+</html>
